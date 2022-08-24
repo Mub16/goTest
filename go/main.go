@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"net/http"
 )
+
+//////////FUNCTION//////////////
 
 func main() {
 	fmt.Println("")
@@ -28,8 +31,25 @@ func write() {
 	fmt.Println(string(fContent))
 }
 func WEBgraph(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "HTML PAGE home")
+	men := User{Name: "Steave", Age: 20, Money: -228, Happines: 0.6, Avg_grades: 0}
+	//men.setNewName("Bob")
+	//fmt.Fprintf(w, men.getAllInfo())
+	tmpl, _ := template.ParseFiles("HTML/main.html")
+	tmpl.Execute(w, men)
+}
+func (user0 User) getAllInfo() string {
+	return fmt.Sprintf("Name: %s. \n Age: %d \n Money:%v", user0.Name, user0.Age, user0.Money)
+}
+func (user0 *User) setNewName(NewName string) {
+	user0.Name = NewName
 }
 func err_page(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "it'page err 404")
+}
+
+// ////////TYPE//////////////
+type User struct {
+	Name                        string
+	Age                         uint32
+	Avg_grades, Happines, Money float64
 }
