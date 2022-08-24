@@ -4,22 +4,34 @@
     <meta charset="windows-1251">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <title>Go page in HTML</title>
     
 </head>
-<body bgcolor="#000" background="index.png">
-    <font color="#E0FFFF">
+<body background="index.png">
+    <font color="#2F4F4F">
     <center>
         <h1>Go - HTML Главная страница!</h1>
     </center>
+    {{if eq .Name "Steave"}}
     <LISTING>
         Пользователь: {{.Name}}
         Возраст: {{.Age}}
         Деньги: {{.Money}}
         Рейтинг: {{.Avg_grades}}
         Оценка счастия: {{.Happines}}
+        <ul>
+            <dt>Хобби:</dt>
+            {{range .Hobbies}}
+            <li>{{.}}</li>
+            {{else}}
+            <li>No info</li>
+            {{end}}
+        </ul>
     </LISTING>
+    {{else}}
+    <p>User dont font!</p>
+    {{end}}
     </font>
 </body>
 </html>

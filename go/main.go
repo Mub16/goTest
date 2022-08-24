@@ -31,7 +31,7 @@ func write() {
 	fmt.Println(string(fContent))
 }
 func WEBgraph(w http.ResponseWriter, r *http.Request) {
-	men := User{Name: "Steave", Age: 20, Money: -228, Happines: 0.6, Avg_grades: 0}
+	men := User{Name: "Steave", Age: 20, Money: -228, Happines: 0.6, Avg_grades: 0, Hobbies: []string{"Video Games", "Mining", "Card colection"}}
 	//men.setNewName("Bob")
 	//fmt.Fprintf(w, men.getAllInfo())
 	tmpl, _ := template.ParseFiles("HTML/main.html")
@@ -52,4 +52,5 @@ type User struct {
 	Name                        string
 	Age                         uint32
 	Avg_grades, Happines, Money float64
+	Hobbies                     []string
 }
