@@ -5,33 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://getbootstrap.com/docs/5.2/examples/cover/cover.css" rel="stylesheet">
     <title>Go page in HTML</title>
     
 </head>
-<body background="index.png">
-    <font color="#2F4F4F">
-    <center>
-        <h1>Go - HTML Главная страница!</h1>
-    </center>
-    {{if eq .Name "Steave"}}
-    <LISTING>
-        Пользователь: {{.Name}}
-        Возраст: {{.Age}}
-        Деньги: {{.Money}}
-        Рейтинг: {{.Avg_grades}}
-        Оценка счастия: {{.Happines}}
-        <ul>
-            <dt>Хобби:</dt>
-            {{range .Hobbies}}
-            <li>{{.}}</li>
-            {{else}}
-            <li>No info</li>
-            {{end}}
-        </ul>
-    </LISTING>
-    {{else}}
-    <p>User dont font!</p>
-    {{end}}
-    </font>
-</body>
+<body class="d-flex h-100 text-center text-bg-dark">
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0"><font color="#87CEFA">golang</font></h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0" href="../main.html">Главная</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#">Особености</a>
+            <a class="nav-link fw-bold py-1 px-0" href="../contact.html">Контакты</a>
+          </nav>
+        </div>
+      </header>
+      <div>
+      <main class="px-3">
+        <h1>What it's GO?</h1>
+        <p class="lead">Не следует путать с Go! — языком программирования, разработанным в 2003 году.</p>
+        <p>
+            Go (часто также golang) — компилируемый многопоточный язык программирования, разработанный внутри компании Google. Разработка Go началась в сентябре 2007 года, его непосредственным проектированием занимались Роберт Гризмер, Роб Пайк и Кен Томпсон, занимавшиеся до этого проектом разработки операционной системы Inferno. Официально язык был представлен в ноябре 2009 года. На данный момент поддержка официального компилятора, разрабатываемого создателями языка, осуществляется для операционных систем FreeBSD, OpenBSD, Linux, macOS, Windows, DragonFly BSD, Plan 9, Solaris, Android, AIX.. Также Go поддерживается набором компиляторов gcc, существует несколько независимых реализаций. Ведётся разработка второй версии языка.
+        </p>
+        <p class="lead">
+          <a href="https://go.dev/" class="btn btn-lg btn-secondary fw-bold border-white bg-white">GO</a>
+        </p>
+      </main>
+      </div>
+    </div>
+    </body>
 </html>

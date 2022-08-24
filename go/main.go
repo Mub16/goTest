@@ -34,8 +34,10 @@ func WEBgraph(w http.ResponseWriter, r *http.Request) {
 	men := User{Name: "Steave", Age: 20, Money: -228, Happines: 0.6, Avg_grades: 0, Hobbies: []string{"Video Games", "Mining", "Card colection"}}
 	//men.setNewName("Bob")
 	//fmt.Fprintf(w, men.getAllInfo())
-	tmpl, _ := template.ParseFiles("HTML/main.html")
+	tmpl, _ := template.ParseFiles("HTML/main.html", "HTML/contact.html")
+	//tmpl0, _ := template.ParseFiles("HTML/contact.html")
 	tmpl.Execute(w, men)
+	//tmpl0.Execute(w, men)
 }
 func (user0 User) getAllInfo() string {
 	return fmt.Sprintf("Name: %s. \n Age: %d \n Money:%v", user0.Name, user0.Age, user0.Money)
